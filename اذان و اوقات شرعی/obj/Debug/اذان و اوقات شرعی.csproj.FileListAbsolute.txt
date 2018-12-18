@@ -1,0 +1,52 @@
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.exe.config
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.exe
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.pdb
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\ControlzEx.dll
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.dll
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\System.Windows.Interactivity.dll
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\ControlzEx.pdb
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.pdb
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.xml
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csprojAssemblyReference.cache
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\MainWindow.g.cs
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\App.g.cs
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی_MarkupCompile.cache
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی_MarkupCompile.lref
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\App.baml
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\MainWindow.baml
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.g.resources
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\اذان_و_اوقات_شرعی.Properties.Resources.resources
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.GenerateResource.cache
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.CoreCompileInputs.cache
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.CopyComplete
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.exe
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.pdb
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.dll
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
+C:\Intel\Progect\اذان و اوقات شرعی\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.xml
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.exe.config
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.exe
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.pdb
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\ControlzEx.dll
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.dll
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.dll
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\System.Windows.Interactivity.dll
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\ControlzEx.pdb
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.xml
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.pdb
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.xml
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csprojAssemblyReference.cache
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\MainWindow.g.cs
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\App.g.cs
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی_MarkupCompile.cache
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی_MarkupCompile.lref
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\App.baml
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\MainWindow.baml
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.g.resources
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان_و_اوقات_شرعی.Properties.Resources.resources
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.GenerateResource.cache
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.CoreCompileInputs.cache
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.CopyComplete
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.exe
+C:\Intel\Progect\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.pdb

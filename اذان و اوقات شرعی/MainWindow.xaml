@@ -1,0 +1,102 @@
+﻿<Controls:MetroWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:اذان_و_اوقات_شرعی"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:tb="http://www.hardcodet.net/taskbar"
+                      xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="اذان_و_اوقات_شرعی.MainWindow"
+                      mc:Ignorable="d"
+        Title="تنظیمات" Height="249.9" Width="341" FlowDirection="RightToLeft" Closing="MetroWindow_Closing">
+    <Controls:MetroWindow.Resources>
+        <System:Double x:Key="FontSize">15</System:Double>
+    </Controls:MetroWindow.Resources>
+    <Grid>
+        <StackPanel>
+            <ComboBox x:Name="City" Width="150" VerticalAlignment="Top"  Controls:TextBoxHelper.Watermark="نام شهر" Controls:TextBoxHelper.WatermarkAlignment="Right" Controls:TextBoxHelper.AutoWatermark="True" Controls:TextBoxHelper.UseFloatingWatermark="True"  HorizontalAlignment="Center" Margin="0,10,0,0"/>
+            <Button Content="ذخیره" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="0,10,0,0" Width="75" Click="Button_Click"/>
+            <Grid x:Name="G1" Width="300" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="اذان صبح :" Grid.Column="0" Grid.Row="0" FontSize="{DynamicResource FontSize}"/>
+                <TextBlock Text="{Binding Azansobh}" Grid.Column="1" Grid.Row="0" TextAlignment="Left"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
+                <TextBlock Text="طلوع افتاب :" Grid.Column="0" Grid.Row="1" FontSize="{DynamicResource FontSize}"/>
+                <TextBlock Text="{Binding Tolo}" Grid.Column="1" Grid.Row="1"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
+                <TextBlock Text="اذان ظهر :" Grid.Column="0" Grid.Row="2" FontSize="{DynamicResource FontSize}"/>
+                <TextBlock Text="{Binding Azanzohr}" Grid.Column="1" Grid.Row="2"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
+
+                <TextBlock Text="غروب افتاب :" Grid.Column="2" Grid.Row="0" FontSize="{DynamicResource FontSize}"/>
+                <TextBlock Text="{Binding Gorob}" Grid.Column="3" Grid.Row="0"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
+                <TextBlock Text="اذان مغرب :" Grid.Column="2" Grid.Row="1" FontSize="{DynamicResource FontSize}"/>
+                <TextBlock Text="{Binding AzaneGorob}" Grid.Column="3" Grid.Row="1"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
+            </Grid>
+        </StackPanel>
+
+        <tb:TaskbarIcon x:Name="myNotifyIcon"
+                    Visibility="Visible"
+                    IconSource="Logo.ico"
+                    MenuActivation="RightClick"
+                    PopupActivation="DoubleClick"
+                    ToolTipText="اذان و اوقات شرعی" >
+            <tb:TaskbarIcon.TrayPopup>
+                <Border
+                  Background="#F7FFFFFF"
+                  BorderBrush="Orange"
+                  BorderThickness="2"
+                  CornerRadius="3"
+                  FlowDirection="RightToLeft" Padding="10,10,10,0" >
+                    <StackPanel>
+                        <Grid Name="G2" DataContext="{Binding DataContext, ElementName=G1,Mode=OneTime}" Width="300" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.Resources>
+                                <System:Double x:Key="FontSize">15</System:Double>
+                            </Grid.Resources>
+                            <TextBlock Text="اذان صبح :" Grid.Column="0" Grid.Row="0" FontSize="{DynamicResource FontSize}"/>
+                            <TextBlock Text="{Binding Azansobh}" Grid.Column="1" Grid.Row="0" TextAlignment="Left"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
+                            <TextBlock Text="طلوع افتاب :" Grid.Column="0" Grid.Row="1" FontSize="{DynamicResource FontSize}"/>
+                            <TextBlock Text="{Binding Tolo}" Grid.Column="1" Grid.Row="1"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
+                            <TextBlock Text="اذان ظهر :" Grid.Column="0" Grid.Row="2" FontSize="{DynamicResource FontSize}"/>
+                            <TextBlock Text="{Binding Azanzohr}" Grid.Column="1" Grid.Row="2"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
+
+                            <TextBlock Text="غروب افتاب :" Grid.Column="2" Grid.Row="0" FontSize="{DynamicResource FontSize}"/>
+                            <TextBlock Text="{Binding Gorob}" Grid.Column="3" Grid.Row="0"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
+                            <TextBlock Text="اذان مغرب :" Grid.Column="2" Grid.Row="1" FontSize="{DynamicResource FontSize}"/>
+                            <TextBlock Text="{Binding AzaneGorob}" Grid.Column="3" Grid.Row="1"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
+                        </Grid>
+                    </StackPanel>
+
+                </Border>
+            </tb:TaskbarIcon.TrayPopup>
+            <!-- Set a simple context menu  -->
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu
+
+      Background="LightCoral">
+                    <MenuItem Header="Settinge" Click="MenuItem_Click" />
+                    <MenuItem Header="Exit" Click="MenuItem_Click_1" />
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+
+    </Grid>
+</Controls:MetroWindow>
