@@ -82,11 +82,12 @@ namespace اذان_و_اوقات_شرعی
             prayer.month = DateTime.Now.Month;
             byte Month = byte.Parse(DateTime.Now.Month.ToString());
             byte Day = byte.Parse(DateTime.Now.Day.ToString());
-            DataView.Azansobh = prayer.MorningPrayer(Month, Day, city.Arz, city.Tol);
-            DataView.Tolo = prayer.Sunrise(Month, (Day), city.Arz, city.Tol);
+            DataView.Azansobh = prayer.MorningPrayer(Month, Day, city.Tol, city.Arz );
+            DataView.Tolo = prayer.Sunrise(Month, (Day), city.Tol, city.Arz );
             DataView.Azanzohr = prayer.MiddayPrayer((Month), Day, city.Arz);
-            DataView.Gorob = prayer.Sunset((Month), (Day), city.Arz, city.Tol);
-            DataView.AzaneGorob = prayer.SunsetPrayer((Month), (Day), city.Arz, city.Tol);
+            DataView.Gorob = prayer.Sunset((Month), (Day), city.Tol, city.Arz);
+            DataView.AzaneGorob = prayer.SunsetPrayer((Month), (Day), city.Tol, city.Arz);
+            //lblNimehShab.Content = prayer.NimehShab();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
