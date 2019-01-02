@@ -61,7 +61,7 @@ namespace اذان_و_اوقات_شرعی
             }
         }
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-        Stream StreamMedia = new MemoryStream(Properties.Resources.رحیم_موذن_زاده);
+        Stream StreamMedia =Properties.Resources.رحیم_موذن_زاده;// new MemoryStream
         void PlaySound()
         {
             player.Play();

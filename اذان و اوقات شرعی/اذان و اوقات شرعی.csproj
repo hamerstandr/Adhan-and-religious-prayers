@@ -118,7 +118,7 @@
     <Resource Include="Logo.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\رحیم موذن زاده.mp3" />
+    <None Include="Resources\رحیم موذن زاده.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -61,12 +61,11 @@ namespace اذان_و_اوقات_شرعی.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static byte[] رحیم_موذن_زاده {
+        internal static System.IO.UnmanagedMemoryStream رحیم_موذن_زاده {
             get {
-                object obj = ResourceManager.GetObject("رحیم_موذن_زاده", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetStream("رحیم_موذن_زاده", resourceCulture);
             }
         }
     }
