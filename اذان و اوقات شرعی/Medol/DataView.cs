@@ -10,11 +10,15 @@ namespace اذان_و_اوقات_شرعی
         public TimeSpan Gorob { get => _gorob; set { _gorob = value; NotifyPropertyChanged("Gorob"); } }
         public TimeSpan AzaneGorob { get => _azaneGorob; set { _azaneGorob = value; NotifyPropertyChanged("AzaneGorob"); } }
 
+        public TimeSpan NimehShab { get => _nimehShab; internal set { _nimehShab = value; NotifyPropertyChanged("NimehShab"); } }
+
         private TimeSpan _azansobh;
         private TimeSpan _tolo;
         private TimeSpan _azanzohr;
         private TimeSpan _gorob;
         private TimeSpan _azaneGorob;
+        private TimeSpan _nimehShab;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged(string propertyName)

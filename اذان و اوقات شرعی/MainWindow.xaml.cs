@@ -72,10 +72,12 @@ namespace اذان_و_اوقات_شرعی
             Settings.Default.City = ComboBoxCity.SelectedIndex;
             SetDate(d);
         }
+        //ابتدا یک آبجکت از کلاس تعریف می کنیم
+        Prayer_times_class.Prayer_times Prayer = new Prayer_times_class.Prayer_times();
+        System.Globalization.PersianCalendar PersianCalendar1 = new System.Globalization.PersianCalendar();
 
-        
 
-        void SetDate(City city)
+        void SetDateOld(City city)
         {
             Prayer prayer = new Prayer();
             //DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month,  DateTime.Now.Day,new System.Globalization.PersianCalendar());
@@ -89,7 +91,20 @@ namespace اذان_و_اوقات_شرعی
             DataView.AzaneGorob = prayer.SunsetPrayer((Month), (Day), city.Tol, city.Arz);
             //lblNimehShab.Content = prayer.NimehShab();
         }
+        void SetDate(City city)
+        {
+            //طول و عرض جغرافیایی و ماه و روز را تنظیم می کنیم
+            Prayer.SetGeo(city.Tol, city.Arz, PersianCalendar1.GetMonth(DateTime.Now), PersianCalendar1.GetDayOfMonth(DateTime.Now));
 
+
+            DataView.Azansobh = TimeSpan.Parse(Prayer.GetAzanSobh());
+            DataView.Azanzohr = TimeSpan.Parse(Prayer.GetAzanZohr());
+            DataView.AzaneGorob = TimeSpan.Parse(Prayer.GetAzanMaghreb());
+
+            DataView.Tolo =TimeSpan.Parse( Prayer.GetTolue());
+            DataView.Gorob = TimeSpan.Parse(Prayer.GetGhorub());
+            DataView.NimehShab = TimeSpan.Parse(Prayer.GetNimehShab());
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.Save();
