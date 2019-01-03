@@ -115,5 +115,13 @@ namespace اذان_و_اوقات_شرعی
                 this.Hide();
             e.Cancel = Cansel;
         }
+
+        private void MyNotifyIcon_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                player.Stop();
+            }
+        }
     }
 }

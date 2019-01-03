@@ -46,8 +46,8 @@
                     Visibility="Visible"
                     IconSource="Logo.ico"
                     MenuActivation="RightClick"
-                    PopupActivation="DoubleClick"
-                    ToolTipText="اذان و اوقات شرعی" >
+                    PopupActivation="LeftClick"
+                    ToolTipText="اذان و اوقات شرعی" MouseLeftButtonDown="MyNotifyIcon_MouseLeftButtonDown" >
             <tb:TaskbarIcon.TrayPopup>
                 <Border
                   Background="#F7FFFFFF"
