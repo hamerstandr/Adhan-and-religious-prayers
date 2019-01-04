@@ -76,6 +76,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FancyBalloon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,6 +90,9 @@
     </Compile>
     <Compile Include="ClockWindow.xaml.cs">
       <DependentUpon>ClockWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FancyBalloon.xaml.cs">
+      <DependentUpon>FancyBalloon.xaml</DependentUpon>
     </Compile>
     <Compile Include="Medol\City.cs" />
     <Compile Include="Medol\Data.cs" />
@@ -98,6 +105,7 @@
   <ItemGroup>
     <Compile Include="Medol\DateTimeHelper.cs" />
     <Compile Include="Medol\Prayer.cs" />
+    <Compile Include="Medol\Screen.cs" />
     <Compile Include="Medol\SurroundingClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

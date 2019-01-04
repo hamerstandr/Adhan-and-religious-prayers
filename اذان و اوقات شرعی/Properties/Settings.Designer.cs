@@ -34,5 +34,29 @@ namespace اذان_و_اوقات_شرعی.Properties {
                 this["City"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double X {
+            get {
+                return ((double)(this["X"]));
+            }
+            set {
+                this["X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Y {
+            get {
+                return ((double)(this["Y"]));
+            }
+            set {
+                this["Y"] = value;
+            }
+        }
     }
 }

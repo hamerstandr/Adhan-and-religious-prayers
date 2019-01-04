@@ -11,12 +11,13 @@
         Title="تنظیمات" Height="249.9" Width="380" FlowDirection="RightToLeft" Closing="MetroWindow_Closing">
     <Controls:MetroWindow.Resources>
         <System:Double x:Key="FontSize">15</System:Double>
+        <local:DataView x:Key="Data"/>
     </Controls:MetroWindow.Resources>
     <Grid>
         <StackPanel>
             <ComboBox x:Name="ComboBoxCity" Width="150" VerticalAlignment="Top"  Controls:TextBoxHelper.Watermark="نام شهر" Controls:TextBoxHelper.WatermarkAlignment="Right" Controls:TextBoxHelper.AutoWatermark="True" Controls:TextBoxHelper.UseFloatingWatermark="True"  HorizontalAlignment="Center" Margin="0,10,0,0"/>
             <Button Content="ذخیره" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="0,10,0,0" Width="75" Click="Button_Click"/>
-            <Grid x:Name="G1" Width="340" HorizontalAlignment="Center">
+            <Grid x:Name="G1" Width="340" HorizontalAlignment="Center" DataContext="{DynamicResource Data}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="88*"/>
                     <ColumnDefinition Width="79*"/>
@@ -51,45 +52,7 @@
                     PopupActivation="LeftClick"
                     ToolTipText="اذان و اوقات شرعی" MouseLeftButtonDown="MyNotifyIcon_MouseLeftButtonDown" >
             <tb:TaskbarIcon.TrayPopup>
-                <Border
-                  Background="#F7FFFFFF"
-                  BorderBrush="Orange"
-                  BorderThickness="2"
-                  CornerRadius="3"
-                  FlowDirection="RightToLeft" Padding="10,10,10,0" >
-                    <StackPanel>
-                        <Grid Name="G2" DataContext="{Binding DataContext, ElementName=G1,Mode=OneTime}" Width="350" Margin="10,10,10,10">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="88*"/>
-                                <ColumnDefinition Width="79*"/>
-                                <ColumnDefinition Width="111*"/>
-                                <ColumnDefinition Width="79*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid.Resources>
-                                <System:Double x:Key="FontSize">15</System:Double>
-                            </Grid.Resources>
-                            <TextBlock Text="اذان صبح :" Grid.Column="0" Grid.Row="0" FontSize="{DynamicResource FontSize}"/>
-                            <TextBlock Text="{Binding Azansobh}" Grid.Column="1" Grid.Row="0" TextAlignment="Left"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
-                            <TextBlock Text="طلوع افتاب :" Grid.Column="0" Grid.Row="1" FontSize="{DynamicResource FontSize}"/>
-                            <TextBlock Text="{Binding Tolo}" Grid.Column="1" Grid.Row="1"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
-                            <TextBlock Text="اذان ظهر :" Grid.Column="0" Grid.Row="2" FontSize="{DynamicResource FontSize}"/>
-                            <TextBlock Text="{Binding Azanzohr}" Grid.Column="1" Grid.Row="2"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
-
-                            <TextBlock Text="غروب افتاب :" Grid.Column="2" Grid.Row="0" FontSize="{DynamicResource FontSize}"/>
-                            <TextBlock Text="{Binding Gorob}" Grid.Column="3" Grid.Row="0"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
-                            <TextBlock Text="اذان مغرب :" Grid.Column="2" Grid.Row="1" FontSize="{DynamicResource FontSize}"/>
-                            <TextBlock Text="{Binding AzaneGorob}" Grid.Column="3" Grid.Row="1"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
-                            <TextBlock Text="نیمه شب شرعی :" Grid.Column="2" Grid.Row="2" FontSize="{DynamicResource FontSize}"/>
-                            <TextBlock Text="{Binding NimehShab}" Grid.Column="3" Grid.Row="2"  FontWeight="Bold" FontSize="{DynamicResource FontSize}"/>
-                        </Grid>
-                    </StackPanel>
-
-                </Border>
+                <local:FancyBalloon x:Name="B1" DataContext="{DynamicResource Data}"/>
             </tb:TaskbarIcon.TrayPopup>
             <!-- Set a simple context menu  -->
             <tb:TaskbarIcon.ContextMenu>

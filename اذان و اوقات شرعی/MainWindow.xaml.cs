@@ -23,7 +23,7 @@ namespace اذان_و_اوقات_شرعی
     /// </summary>
     public partial class MainWindow 
     {
-        public DataView DataView = new DataView();
+        public DataView DataView ;
         List<City> ListCity = new Data().Citys;
         readonly DispatcherTimer timer = new DispatcherTimer();
         public DispatcherTimer Timer => timer;
@@ -32,8 +32,9 @@ namespace اذان_و_اوقات_شرعی
         {
             InitializeComponent();
             Me = this;
-            G1.DataContext = DataView;
-            G2.DataContext = DataView;
+            //initialize NotifyIcon
+            DataView = (DataView)FindResource("Data");
+            B1.DataContext = DataView;
             ComboBoxCity.ItemsSource = ListCity;
             ComboBoxCity.DisplayMemberPath = "Name";
             ComboBoxCity.SelectionChanged += City_SelectionChanged;
@@ -143,7 +144,9 @@ namespace اذان_و_اوقات_شرعی
         }
         public static void ShowPopup()
         {
-            //Me.myNotifyIcon.ShowCustomBalloon()
+            FancyBalloon balloon = new FancyBalloon();
+            balloon.DataContext = Me.DataView;
+            Me.myNotifyIcon.ShowCustomBalloon(balloon, new System.Windows.Controls.Primitives.PopupAnimation(),5000);
         }
     }
 }
