@@ -27,9 +27,11 @@ namespace اذان_و_اوقات_شرعی
         List<City> ListCity = new Data().Citys;
         readonly DispatcherTimer timer = new DispatcherTimer();
         public DispatcherTimer Timer => timer;
+        public static MainWindow Me;
         public MainWindow()
         {
             InitializeComponent();
+            Me = this;
             G1.DataContext = DataView;
             G2.DataContext = DataView;
             ComboBoxCity.ItemsSource = ListCity;
@@ -41,6 +43,7 @@ namespace اذان_و_اوقات_شرعی
             Timer.Interval = TimeSpan.FromSeconds(1);
             Timer.Tick += Timer_Tick;
             Timer.Start();
+            new ClockWindow().Show();
         }
         DateTime Date;
         private void Timer_Tick(object sender, EventArgs e)
@@ -137,6 +140,10 @@ namespace اذان_و_اوقات_شرعی
             {
                 player.Stop();
             }
+        }
+        public static void ShowPopup()
+        {
+            //Me.myNotifyIcon.ShowCustomBalloon()
         }
     }
 }

@@ -1,0 +1,96 @@
+﻿<Window x:Class="اذان_و_اوقات_شرعی.ClockWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:اذان_و_اوقات_شرعی"
+        mc:Ignorable="d"
+        Title="Clock" Margin="2" Height="327" Width="311" AllowsTransparency="True" 
+
+        WindowStyle="None" Background="Transparent" WindowStartupLocation="CenterScreen" 
+
+        Icon="Resources/clock.ico" 
+
+        ResizeMode="NoResize" Topmost="False" Opacity="1" ShowInTaskbar="False">
+    <Grid Width="300" Height="300" MouseLeftButtonDown="Grid_MouseDown">
+        <Image Source="Resources/backGround.png" MouseDown="Image_MouseDown"></Image>
+
+        <Label Name="christianityCalendar" Foreground="White" 
+
+        Margin="0, 0, 0, 52" HorizontalAlignment="Center" 
+
+        VerticalAlignment="Bottom" Height="Auto"
+
+         Width="Auto">Value
+        </Label>
+        <Label Name="persianCalendar" Foreground="White" 
+ 
+
+        VerticalAlignment="Bottom" Height="Auto" 
+
+        Width="Auto" HorizontalAlignment="Center" Margin="0,0,0,196">Value
+        </Label>
+
+        <!--<span class="code-comment"> Second  -->
+        <Rectangle Margin="150,0,149,150" Name="rectangleSecond" 
+
+        Stroke="red" Height="120" VerticalAlignment="Bottom">
+            <Rectangle.RenderTransform>
+                <RotateTransform x:Name="secondHand" CenterX="0" 
+
+                CenterY="120" Angle="0" />
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <!---->
+        
+        <!--<span class="code-comment"> Minute  -->
+        <Rectangle Margin="150,49,149,151" Name="rectangleMinute" 
+
+        Stroke="LightGreen">
+            <Rectangle.RenderTransform>
+                <RotateTransform x:Name="minuteHand" CenterX="0" 
+
+                CenterY="100" Angle="0" />
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <!--<Path Name="rectangleMinute" Data="M1888 3148 c0 -40 -2 -86 -4 -103 -1 -16 -3 -182 -4 -367 -2 -186 -6
+-335 -10 -333 -4 3 -13 -2 -20 -10 -10 -12 -9 -15 4 -15 18 0 22 -15 6 -25
+-17 -10 10 -36 30 -30 27 9 18 -37 -9 -47 -15 -5 -21 -13 -17 -23 3 -9 -3 -30
+-14 -48 -22 -36 -26 -77 -8 -95 9 -9 7 -16 -7 -32 -18 -20 -19 -20 25 -33 11
+-3 7 -8 -11 -17 -50 -23 -66 -106 -29 -153 55 -70 170 -20 170 74 0 39 -31 89
+-56 89 -8 0 -14 5 -14 11 0 6 6 9 14 6 8 -3 20 1 26 8 10 12 9 16 -3 21 -14 5
+-15 8 -2 28 13 19 13 25 -1 45 -15 21 -17 21 -40 6 -14 -9 -29 -13 -34 -10
+-16 10 -11 45 8 52 9 3 27 17 39 30 17 20 21 35 19 84 -1 33 2 63 6 65 13 8
+-2 26 -17 20 -15 -5 -26 265 -24 599 2 259 1 275 -11 275 -6 0 -11 -32 -12
+-72z" 
+              Stretch="Uniform" Fill="#FFFFFFFF" Margin="145,49,149,151" Width="10" RenderTransformOrigin="0.5,0.6">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="0" x:Name="minuteHand"/>
+                        <ScaleTransform ScaleX="1" ScaleY="-1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>-->
+        <!--<Image  Margin="145,49,149,151" Name="rectangleMinute" Source="Resources/Q4pxb.png" Stretch="UniformToFill" Width="10" >
+            <Image.RenderTransform>
+                <RotateTransform x:Name="minuteHand" Angle="0" />
+            </Image.RenderTransform>
+        </Image>-->
+        <!---->
+        
+        <!--<span class="code-comment"> Hour  -->
+        <Rectangle Margin="150,80,149,150" Name="rectangleHour" 
+
+        Stroke="White">
+            <Rectangle.RenderTransform>
+                <RotateTransform x:Name="hourHand" CenterX="0" 
+
+                CenterY="70" Angle="0" />
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <!---->
+        
+    </Grid>
+</Window>

@@ -72,6 +72,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ClockWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,6 +83,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClockWindow.xaml.cs">
+      <DependentUpon>ClockWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Medol\City.cs" />
     <Compile Include="Medol\Data.cs" />
@@ -89,6 +96,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Medol\DateTimeHelper.cs" />
     <Compile Include="Medol\Prayer.cs" />
     <Compile Include="Medol\SurroundingClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -122,6 +130,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\رحیم موذن زاده.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\backGround.png" />
+    <Resource Include="Resources\clock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Q4pxb.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -76,3 +76,6 @@ C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Deb
 C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.CopyComplete
 C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.exe
 C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.pdb
+C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csprojAssemblyReference.cache
+C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\ClockWindow.g.cs
+C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\ClockWindow.baml
