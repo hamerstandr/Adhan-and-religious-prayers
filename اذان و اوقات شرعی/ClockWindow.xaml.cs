@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AppBarApplication;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using اذان_و_اوقات_شرعی.Interop;
 using اذان_و_اوقات_شرعی.Medol;
 using اذان_و_اوقات_شرعی.Properties;
 
@@ -22,10 +25,10 @@ namespace اذان_و_اوقات_شرعی
     /// </summary>
     public partial class ClockWindow : Window
     {
-        System.Globalization.PersianCalendar PersianCalendar1 = new System.Globalization.PersianCalendar();
-        System.Globalization.GregorianCalendar GregorianCalendar1 = new System.Globalization.GregorianCalendar();
-        DispatcherTimer timer = new DispatcherTimer();
-        DispatcherTimer timerHid = new DispatcherTimer();
+        readonly PersianCalendar PersianCalendar1 = new PersianCalendar();
+        readonly GregorianCalendar GregorianCalendar1 = new GregorianCalendar();
+        readonly DispatcherTimer timer = new DispatcherTimer();
+        readonly DispatcherTimer timerHid = new DispatcherTimer();
         public ClockWindow()
         {
             InitializeComponent();
@@ -33,12 +36,14 @@ namespace اذان_و_اوقات_شرعی
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += Timer_Tick;
             timer.Start();
-            Screen1 = new Screen();
+            Screen1 = new PositionMouseInScreen();
             Screen1.ChangedPosition += ClockWindow_ChangedPosition;
             timerHid.Interval = new TimeSpan(0, 0, 0,0,100);
-            timerHid.Tick += TimerHid_Tick; ;
+            timerHid.Tick += TimerHid_Tick;
+            //Win.Show();
         }
-
+        PositionMouseInScreen screen;
+        internal PositionMouseInScreen Screen1 { get => screen; set => screen = value; }
         private void ClockWindow_Loaded(object sender, RoutedEventArgs e)
         {
             if (Settings.Default.X != 0)
@@ -54,26 +59,107 @@ namespace اذان_و_اوقات_شرعی
             Count++;
             if (Count == 50)
             {
-                Count = 0;this.Hide();
+                Count = 0;
+                this.Hide();
                 timerHid.Stop();
             }
         }
+        internal static bool IsRTL => CultureInfo.InstalledUICulture.TextInfo.IsRightToLeft;
 
-        Screen Screen1;
-        private void ClockWindow_ChangedPosition(object sender, EventArgs e)
+
+
+        RECT2 GetSetTasck(double Height, double Width)
         {
-            var w = System.Windows.SystemParameters.PrimaryScreenWidth;
-            var h = System.Windows.SystemParameters.PrimaryScreenHeight;
-            Point p =(Point) sender;
-            if (p.X >= w - 100)
-                if (p.Y <= 400)
-                {
-                    this.Show();
-                    this.Activate();
-                    timerHid.Start();
-                }
+            RECT2 p =new RECT2();
+            //گرفتن موقعیت ساعت سیستم
+            var taskbarState = WindowsTaskbar.Current;
+            if (taskbarState.ContainingScreen == null)
+            {
+                // We're not ready to lay out. (e.g. RDP transition)
+                var w = System.Windows.SystemParameters.PrimaryScreenWidth;
+                var h = System.Windows.SystemParameters.PrimaryScreenHeight;
+                p.X = w- Width; p.Y = h- Height;
+                return p;
+            }
+            p.State = taskbarState.Location;
+            switch (taskbarState.Location)
+            {
+                case WindowsTaskbar.Position.Left:
+                    p.X = taskbarState.Size.Right +Width;
+                    p.Y = taskbarState.Size.Bottom - Height;
+
+                    p.Location = new Point(taskbarState.Size.Left, taskbarState.Size.Bottom);
+                    break;
+                case WindowsTaskbar.Position.Right:
+                    p.X = taskbarState.Size.Left  - Width;
+                    p.Y = taskbarState.Size.Bottom - Height;
+
+                    p.Location = new Point(taskbarState.Size.Right, taskbarState.Size.Bottom);
+                    break;
+                case WindowsTaskbar.Position.Top:
+                    p.X = IsRTL ? taskbarState.Size.Left  :
+                        taskbarState.Size.Right - Width;
+                    p.Y = taskbarState.Size.Bottom + Height;
+
+                    p.Location = new Point(IsRTL ? taskbarState.Size.Left :
+                        taskbarState.Size.Right, taskbarState.Size.Top);
+                    break;
+                case WindowsTaskbar.Position.Bottom:
+                    p.X = IsRTL ? taskbarState.Size.Left  :
+                        taskbarState.Size.Right  - Width;
+                    p.Y = taskbarState.Size.Top - Height;
+
+                    p.Location = new Point(IsRTL ? taskbarState.Size.Left :
+                        taskbarState.Size.Right, taskbarState.Size.Bottom);
+                    break;
+            }
+            return p;
         }
 
+        //readonly Window1 Win = new Window1();
+        private void ClockWindow_ChangedPosition(object sender, EventArgs e)
+        {
+            var PSet=GetSetTasck(85, 150);
+            //Win.Left = PSet.X;
+            //Win.Top = PSet.Y;
+            Point p = (Point)sender;
+            switch (PSet.State)
+            {
+                case WindowsTaskbar.Position.Top:
+                    if (p.X >= PSet.X && p.X <= PSet.Location.X)
+                        if (p.Y <= PSet.Y && p.Y >= PSet.Location.Y)
+                            Shows();
+                    break;
+                case WindowsTaskbar.Position.Bottom:
+                    if (p.X >= PSet.X && p.X <= PSet.Location.X)
+                        if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
+                            Shows();
+                    break;
+                case WindowsTaskbar.Position.Right:
+                    if (p.X >= PSet.X && p.X <= PSet.Location.X)
+                        if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
+                            Shows();
+                    break;
+                case WindowsTaskbar.Position.Left:
+                    if (p.X <= PSet.X && p.X >= PSet.Location.X)
+                        if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
+                            Shows();
+                    break;
+            }
+            //
+            //var w = System.Windows.SystemParameters.PrimaryScreenWidth;
+            //var h = System.Windows.SystemParameters.PrimaryScreenHeight;
+
+            
+        }
+        void Shows()
+        {
+            //Win.Show();
+            //Win.Activate();
+            this.Show();
+            this.Activate();
+            timerHid.Start();
+        }
         private void Timer_Tick(object sender, EventArgs e)
         {
             
@@ -89,13 +175,13 @@ namespace اذان_و_اوقات_شرعی
         }
 
         int Refresh = 120;
-        void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            this.Dispatcher.Invoke(DispatcherPriority.Normal, (Action)(() =>
-            {
+        //void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        //{
+        //    this.Dispatcher.Invoke(DispatcherPriority.Normal, (Action)(() =>
+        //    {
                 
-            }));
-        }
+        //    }));
+        //}
         void SetDate()
         {
             DateTime now = DateTime.Now;
@@ -110,16 +196,11 @@ namespace اذان_و_اوقات_شرعی
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
-        }
-
-        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
-        {
             if (e.ClickCount == 2)
             {
                 MainWindow.ShowPopup();
             }
         }
-
         private void Grid_MouseUp(object sender, MouseButtonEventArgs e)
         {
             Settings.Default.X = this.Left;

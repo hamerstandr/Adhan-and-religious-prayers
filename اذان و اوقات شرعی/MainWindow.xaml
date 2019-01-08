@@ -60,6 +60,8 @@
 
       Background="LightCoral">
                     <MenuItem Header="Settinge" Click="MenuItem_Click" />
+                    <MenuItem Header="Reset Lockation Clock" Click="ResetLockationClock_Click" />
+                    <MenuItem Header="Stop" Click="Media_Click" />
                     <MenuItem Header="Exit" Click="MenuItem_Click_1" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>

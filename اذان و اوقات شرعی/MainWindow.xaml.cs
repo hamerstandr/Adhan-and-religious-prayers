@@ -24,7 +24,7 @@ namespace اذان_و_اوقات_شرعی
     public partial class MainWindow 
     {
         public DataView DataView ;
-        List<City> ListCity = new Data().Citys;
+        readonly List<City> ListCity = new Data().Citys;
         readonly DispatcherTimer timer = new DispatcherTimer();
         public DispatcherTimer Timer => timer;
         public static MainWindow Me;
@@ -44,8 +44,10 @@ namespace اذان_و_اوقات_شرعی
             Timer.Interval = TimeSpan.FromSeconds(1);
             Timer.Tick += Timer_Tick;
             Timer.Start();
-            new ClockWindow().Show();
+            Clock.Show();
         }
+
+        readonly ClockWindow Clock = new ClockWindow();
         DateTime Date;
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -64,8 +66,9 @@ namespace اذان_و_اوقات_شرعی
                 PlaySound();
             }
         }
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-        Stream StreamMedia =Properties.Resources.رحیم_موذن_زاده;// new MemoryStream
+
+        readonly System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+        readonly Stream StreamMedia =Properties.Resources.رحیم_موذن_زاده;// new MemoryStream
         void PlaySound()
         {
             player.Play();
@@ -76,25 +79,28 @@ namespace اذان_و_اوقات_شرعی
             Settings.Default.City = ComboBoxCity.SelectedIndex;
             SetDate(d);
         }
+
         //ابتدا یک آبجکت از کلاس تعریف می کنیم
-        Prayer_times_class.Prayer_times Prayer = new Prayer_times_class.Prayer_times();
-        System.Globalization.PersianCalendar PersianCalendar1 = new System.Globalization.PersianCalendar();
+        readonly Prayer_times_class.Prayer_times Prayer = new Prayer_times_class.Prayer_times();
+        readonly System.Globalization.PersianCalendar PersianCalendar1 = new System.Globalization.PersianCalendar();
 
 
-        void SetDateOld(City city)
-        {
-            Prayer prayer = new Prayer();
-            //DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month,  DateTime.Now.Day,new System.Globalization.PersianCalendar());
-            prayer.month = DateTime.Now.Month;
-            byte Month = byte.Parse(DateTime.Now.Month.ToString());
-            byte Day = byte.Parse(DateTime.Now.Day.ToString());
-            DataView.Azansobh = prayer.MorningPrayer(Month, Day, city.Tol, city.Arz );
-            DataView.Tolo = prayer.Sunrise(Month, (Day), city.Tol, city.Arz );
-            DataView.Azanzohr = prayer.MiddayPrayer((Month), Day, city.Arz);
-            DataView.Gorob = prayer.Sunset((Month), (Day), city.Tol, city.Arz);
-            DataView.AzaneGorob = prayer.SunsetPrayer((Month), (Day), city.Tol, city.Arz);
-            //lblNimehShab.Content = prayer.NimehShab();
-        }
+        //void SetDateOld(City city)
+        //{
+        //    Prayer prayer = new Prayer
+        //    {
+        //        //DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month,  DateTime.Now.Day,new System.Globalization.PersianCalendar());
+        //        month = DateTime.Now.Month
+        //    };
+        //    byte Month = byte.Parse(DateTime.Now.Month.ToString());
+        //    byte Day = byte.Parse(DateTime.Now.Day.ToString());
+        //    DataView.Azansobh = prayer.MorningPrayer(Month, Day, city.Tol, city.Arz );
+        //    DataView.Tolo = prayer.Sunrise(Month, (Day), city.Tol, city.Arz );
+        //    DataView.Azanzohr = prayer.MiddayPrayer((Month), Day, city.Arz);
+        //    DataView.Gorob = prayer.Sunset((Month), (Day), city.Tol, city.Arz);
+        //    DataView.AzaneGorob = prayer.SunsetPrayer((Month), (Day), city.Tol, city.Arz);
+        //    //lblNimehShab.Content = prayer.NimehShab();
+        //}
         void SetDate(City city)
         {
             //طول و عرض جغرافیایی و ماه و روز را تنظیم می کنیم
@@ -121,6 +127,7 @@ namespace اذان_و_اوقات_شرعی
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
+            Clock.Close();
             Cansel = false;
             this.Close();
         }
@@ -144,9 +151,22 @@ namespace اذان_و_اوقات_شرعی
         }
         public static void ShowPopup()
         {
-            FancyBalloon balloon = new FancyBalloon();
-            balloon.DataContext = Me.DataView;
+            FancyBalloon balloon = new FancyBalloon
+            {
+                DataContext = Me.DataView
+            };
             Me.myNotifyIcon.ShowCustomBalloon(balloon, new System.Windows.Controls.Primitives.PopupAnimation(),5000);
+        }
+
+        private void Media_Click(object sender, RoutedEventArgs e)
+        {
+            player.Stop();
+        }
+
+        private void ResetLockationClock_Click(object sender, RoutedEventArgs e)
+        {
+            Clock.Left = 0;
+            Clock.Top = 0;
         }
     }
 }
