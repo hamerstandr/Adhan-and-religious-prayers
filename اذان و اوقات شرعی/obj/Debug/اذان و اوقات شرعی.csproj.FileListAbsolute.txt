@@ -114,3 +114,11 @@ C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\
 C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.CopyComplete
 C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.exe
 C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.pdb
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Newtonsoft.Json.dll
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\PacketDotNet.dll
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\SharpPcap.dll
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Newtonsoft.Json.pdb
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Newtonsoft.Json.xml
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\PacketDotNet.xml
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\SharpPcap.xml
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\SharpPcap.dll.config

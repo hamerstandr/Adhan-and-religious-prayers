@@ -127,12 +127,12 @@ namespace اذان_و_اوقات_شرعی
             Settings.Default.Save();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void Settinge_MenuItem_Click(object sender, RoutedEventArgs e)
         {
             this.Show();
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        private void Exit_MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Clock.Close();
             Cansel = false;
@@ -165,7 +165,7 @@ namespace اذان_و_اوقات_شرعی
             Me.myNotifyIcon.ShowCustomBalloon(balloon, new System.Windows.Controls.Primitives.PopupAnimation(),5000);
         }
 
-        private void Media_Click(object sender, RoutedEventArgs e)
+        private void Stop_Click(object sender, RoutedEventArgs e)
         {
             player.Stop();
         }
@@ -188,6 +188,18 @@ namespace اذان_و_اوقات_شرعی
         private void OnHor_Unchecked(object sender, RoutedEventArgs e)
         {
             OnHor_Checked(sender, e);
+        }
+
+        private void Auto_Update_MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            bool autoUpdate =! (sender as MenuItem).IsChecked;
+            (sender as MenuItem).IsChecked = autoUpdate;
+            App.TryToSetAutoUpdate(autoUpdate);
+        }
+
+        private void Update_MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            App.TryToCheckUpdate();
         }
     }
 }

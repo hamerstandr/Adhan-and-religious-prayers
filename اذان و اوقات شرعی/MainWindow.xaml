@@ -60,10 +60,12 @@
                 <ContextMenu
 
       Background="LightCoral">
-                    <MenuItem Header="Settinge" Click="MenuItem_Click" />
+                    <MenuItem Header="Auto Update" Click="Auto_Update_MenuItem_Click" />
+                    <MenuItem Header="Update" Click="Update_MenuItem_Click" />
+                    <MenuItem Header="Settinge" Click="Settinge_MenuItem_Click" />
                     <MenuItem Header="Reset Lockation Clock" Click="ResetLockationClock_Click" />
-                    <MenuItem Header="Stop" Click="Media_Click" />
-                    <MenuItem Header="Exit" Click="MenuItem_Click_1" />
+                    <MenuItem Header="Stop" Click="Stop_Click" />
+                    <MenuItem Header="Exit" Click="Exit_MenuItem_Click" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>

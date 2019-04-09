@@ -46,8 +46,17 @@
     <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PacketDotNet, Version=0.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PacketDotNet.0.13.0\lib\net\PacketDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="Prayer_times_class">
       <HintPath>.\Prayer_times_class.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpPcap, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpPcap.4.2.0\lib\net\SharpPcap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -74,7 +83,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Service\CheckUpdateManager.cs" />
+    <Compile Include="Service\NetworkStructure.cs" />
+    <Compile Include="Service\PortProcessMap.cs" />
+    <Compile Include="Service\PortProcessMapWrapper.cs" />
+    <Compile Include="Service\Tool.cs" />
     <Compile Include="RECT2.cs" />
+    <Compile Include="Service\UDMap.cs" />
+    <Compile Include="Service\WinAPIWrapper.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -132,7 +148,7 @@
     <Compile Include="Medol\Prayer.cs" />
     <Compile Include="Medol\PositionMouseInScreen.cs" />
     <Compile Include="Interop\Shcores.cs" />
-    <Compile Include="Medol\SurroundingClass.cs" />
+    <Compile Include="Service\SurroundingClass.cs" />
     <Compile Include="Medol\WindowsTaskbar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
