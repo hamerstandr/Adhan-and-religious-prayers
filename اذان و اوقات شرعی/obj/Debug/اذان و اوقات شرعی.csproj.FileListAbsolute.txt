@@ -84,3 +84,33 @@ C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Deb
 C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.exe
 C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.pdb
 C:\Intel\Git\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csprojAssemblyReference.cache
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.exe.config
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.exe
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.pdb
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Prayer_times_class.dll
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\ControlzEx.pdb
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.xml
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.pdb
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.xml
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csprojAssemblyReference.cache
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\ClockWindow.g.cs
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\FancyBalloon.g.cs
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\MainWindow.g.cs
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\Window1.g.cs
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\App.g.cs
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی_MarkupCompile.cache
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی_MarkupCompile.lref
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\App.baml
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\ClockWindow.baml
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\FancyBalloon.baml
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\MainWindow.baml
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\Window1.baml
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.g.resources
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان_و_اوقات_شرعی.Properties.Resources.resources
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.GenerateResource.cache
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.CoreCompileInputs.cache
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.CopyComplete
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.exe
+C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.pdb

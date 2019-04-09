@@ -32,6 +32,7 @@ namespace اذان_و_اوقات_شرعی
         {
             InitializeComponent();
             Me = this;
+            OnHor.IsChecked = Settings.Default.OnHor;//false
             //initialize NotifyIcon
             DataView = (DataView)FindResource("Data");
             B1.DataContext = DataView;
@@ -106,14 +107,20 @@ namespace اذان_و_اوقات_شرعی
             //طول و عرض جغرافیایی و ماه و روز را تنظیم می کنیم
             Prayer.SetGeo(city.Tol, city.Arz, PersianCalendar1.GetMonth(DateTime.Now), PersianCalendar1.GetDayOfMonth(DateTime.Now));
 
+            TimeSpan d ;
+            if (Settings.Default.OnHor)
+            {
+                d = new TimeSpan(1, 0, 0);
+            }
+            else
+                d = new TimeSpan(0, 0, 0);
+            DataView.Azansobh = TimeSpan.Parse(Prayer.GetAzanSobh())-d;
+            DataView.Azanzohr = TimeSpan.Parse(Prayer.GetAzanZohr())-d;
+            DataView.AzaneGorob = TimeSpan.Parse(Prayer.GetAzanMaghreb())-d;
 
-            DataView.Azansobh = TimeSpan.Parse(Prayer.GetAzanSobh());
-            DataView.Azanzohr = TimeSpan.Parse(Prayer.GetAzanZohr());
-            DataView.AzaneGorob = TimeSpan.Parse(Prayer.GetAzanMaghreb());
-
-            DataView.Tolo =TimeSpan.Parse( Prayer.GetTolue());
-            DataView.Gorob = TimeSpan.Parse(Prayer.GetGhorub());
-            DataView.NimehShab = TimeSpan.Parse(Prayer.GetNimehShab());
+            DataView.Tolo =TimeSpan.Parse( Prayer.GetTolue())-d;
+            DataView.Gorob = TimeSpan.Parse(Prayer.GetGhorub())-d;
+            DataView.NimehShab = TimeSpan.Parse(Prayer.GetNimehShab())-d;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -167,6 +174,20 @@ namespace اذان_و_اوقات_شرعی
         {
             Clock.Left = 0;
             Clock.Top = 0;
+        }
+
+        private void OnHor_Checked(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.OnHor= OnHor.IsChecked.Value;
+            //set Chenge
+            City d = ComboBoxCity.SelectedItem as City;
+            Settings.Default.City = ComboBoxCity.SelectedIndex;
+            SetDate(d);
+        }
+
+        private void OnHor_Unchecked(object sender, RoutedEventArgs e)
+        {
+            OnHor_Checked(sender, e);
         }
     }
 }
