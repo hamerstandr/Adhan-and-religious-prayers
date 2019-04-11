@@ -12,7 +12,7 @@
         Icon="Resources/clock.ico" 
 
         ResizeMode="NoResize" Topmost="False" Opacity="1" ShowInTaskbar="False">
-    <Grid Width="300" Height="300" MouseLeftButtonDown="Grid_MouseDown" MouseUp="Grid_MouseUp" MouseLeftButtonUp="Grid_MouseLeftButtonUp">
+    <Grid Width="300" Height="300"  MouseLeftButtonDown="Grid_MouseDown" MouseUp="Grid_MouseUp" MouseLeftButtonUp="Grid_MouseLeftButtonUp">
         <Image Source="Resources/backGround.png"/>
 
         <Label Name="christianityCalendar" Foreground="White" 

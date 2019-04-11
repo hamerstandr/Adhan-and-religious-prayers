@@ -18,6 +18,12 @@ namespace اذان_و_اوقات_شرعی
     {
         public App()
         {
+            this.Startup += App_Startup;
+            
+        }
+        MainWindow _MainWindow;
+        private void App_Startup(object sender, StartupEventArgs e)
+        {
             if (Settings.Default.AutoUpdate)
             {
                 System.Timers.Timer myTimer = new System.Timers.Timer
@@ -28,7 +34,10 @@ namespace اذان_و_اوقات_شرعی
                 myTimer.Elapsed += MyTimer_Elapsed_AutoCheckUpdate;
                 myTimer.Enabled = true;
             }
+            _MainWindow = new MainWindow();
+            _MainWindow.Hide();
         }
+
         private void MyTimer_Elapsed_AutoCheckUpdate(object sender, ElapsedEventArgs e)
         {
             try
