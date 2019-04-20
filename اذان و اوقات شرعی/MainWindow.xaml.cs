@@ -46,6 +46,7 @@ namespace اذان_و_اوقات_شرعی
             Timer.Tick += Timer_Tick;
             Timer.Start();
             Clock.Show();
+            EnableClock.IsChecked = Settings.Default.Clock;
         }
 
         readonly ClockWindow Clock = new ClockWindow();
@@ -200,6 +201,16 @@ namespace اذان_و_اوقات_شرعی
         private void Update_MenuItem_Click(object sender, RoutedEventArgs e)
         {
             App.TryToCheckUpdate();
+        }
+
+        private void EnableClock_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.Clock = !Settings.Default.Clock;
+            Settings.Default.Save();
+            if (Settings.Default.Clock)
+                Clock.Enable();
+            else
+                Clock.Disable();
         }
     }
 }

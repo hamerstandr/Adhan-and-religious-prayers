@@ -42,6 +42,14 @@ namespace اذان_و_اوقات_شرعی
             timerHid.Tick += TimerHid_Tick;
             //Win.Show();
         }
+        public void Enable()
+        {
+            Screen1.ChangedPosition += ClockWindow_ChangedPosition;
+        }
+        public void Disable()
+        {
+            Screen1.ChangedPosition -= ClockWindow_ChangedPosition;
+        }
         PositionMouseInScreen screen;
         internal PositionMouseInScreen Screen1 { get => screen; set => screen = value; }
         private void ClockWindow_Loaded(object sender, RoutedEventArgs e)
@@ -119,38 +127,39 @@ namespace اذان_و_اوقات_شرعی
         //readonly Window1 Win = new Window1();
         private void ClockWindow_ChangedPosition(object sender, EventArgs e)
         {
-            var PSet=GetSetTasck(85, 150);
-            //Win.Left = PSet.X;
-            //Win.Top = PSet.Y;
-            Point p = (Point)sender;
-            switch (PSet.State)
+            if (Settings.Default.Clock)
             {
-                case WindowsTaskbar.Position.Top:
-                    if (p.X >= PSet.X && p.X <= PSet.Location.X)
-                        if (p.Y <= PSet.Y && p.Y >= PSet.Location.Y)
-                            Shows();
-                    break;
-                case WindowsTaskbar.Position.Bottom:
-                    if (p.X >= PSet.X && p.X <= PSet.Location.X)
-                        if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
-                            Shows();
-                    break;
-                case WindowsTaskbar.Position.Right:
-                    if (p.X >= PSet.X && p.X <= PSet.Location.X)
-                        if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
-                            Shows();
-                    break;
-                case WindowsTaskbar.Position.Left:
-                    if (p.X <= PSet.X && p.X >= PSet.Location.X)
-                        if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
-                            Shows();
-                    break;
+                var PSet = GetSetTasck(85, 150);
+                //Win.Left = PSet.X;
+                //Win.Top = PSet.Y;
+                Point p = (Point)sender;
+                switch (PSet.State)
+                {
+                    case WindowsTaskbar.Position.Top:
+                        if (p.X >= PSet.X && p.X <= PSet.Location.X)
+                            if (p.Y <= PSet.Y && p.Y >= PSet.Location.Y)
+                                Shows();
+                        break;
+                    case WindowsTaskbar.Position.Bottom:
+                        if (p.X >= PSet.X && p.X <= PSet.Location.X)
+                            if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
+                                Shows();
+                        break;
+                    case WindowsTaskbar.Position.Right:
+                        if (p.X >= PSet.X && p.X <= PSet.Location.X)
+                            if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
+                                Shows();
+                        break;
+                    case WindowsTaskbar.Position.Left:
+                        if (p.X <= PSet.X && p.X >= PSet.Location.X)
+                            if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
+                                Shows();
+                        break;
+                }
+                //
+                //var w = System.Windows.SystemParameters.PrimaryScreenWidth;
+                //var h = System.Windows.SystemParameters.PrimaryScreenHeight;
             }
-            //
-            //var w = System.Windows.SystemParameters.PrimaryScreenWidth;
-            //var h = System.Windows.SystemParameters.PrimaryScreenHeight;
-
-            
         }
         void Shows()
         {
@@ -160,6 +169,7 @@ namespace اذان_و_اوقات_شرعی
             this.Activate();
             timerHid.Start();
         }
+        //set time
         private void Timer_Tick(object sender, EventArgs e)
         {
             
