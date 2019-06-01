@@ -1,8 +1,10 @@
 ﻿using AppBarApplication;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,6 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -17,6 +20,7 @@ using System.Windows.Threading;
 using اذان_و_اوقات_شرعی.Interop;
 using اذان_و_اوقات_شرعی.Medol;
 using اذان_و_اوقات_شرعی.Properties;
+using اذان_و_اوقات_شرعی.Service;
 
 namespace اذان_و_اوقات_شرعی
 {
@@ -121,6 +125,7 @@ namespace اذان_و_اوقات_شرعی
                         taskbarState.Size.Right, taskbarState.Size.Bottom);
                     break;
             }
+
             return p;
         }
 
@@ -129,7 +134,7 @@ namespace اذان_و_اوقات_شرعی
         {
             if (Settings.Default.Clock)
             {
-                var PSet = GetSetTasck(85, 150);
+                var PSet = GetSetTasck(0, 150);
                 //Win.Left = PSet.X;
                 //Win.Top = PSet.Y;
                 Point p = (Point)sender;
@@ -138,22 +143,22 @@ namespace اذان_و_اوقات_شرعی
                     case WindowsTaskbar.Position.Top:
                         if (p.X >= PSet.X && p.X <= PSet.Location.X)
                             if (p.Y <= PSet.Y && p.Y >= PSet.Location.Y)
-                                Shows();
+                                ShowApp();
                         break;
                     case WindowsTaskbar.Position.Bottom:
                         if (p.X >= PSet.X && p.X <= PSet.Location.X)
                             if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
-                                Shows();
+                                ShowApp();
                         break;
                     case WindowsTaskbar.Position.Right:
                         if (p.X >= PSet.X && p.X <= PSet.Location.X)
                             if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
-                                Shows();
+                                ShowApp();
                         break;
                     case WindowsTaskbar.Position.Left:
                         if (p.X <= PSet.X && p.X >= PSet.Location.X)
                             if (p.Y >= PSet.Y && p.Y <= PSet.Location.Y)
-                                Shows();
+                                ShowApp();
                         break;
                 }
                 //
@@ -161,13 +166,14 @@ namespace اذان_و_اوقات_شرعی
                 //var h = System.Windows.SystemParameters.PrimaryScreenHeight;
             }
         }
-        void Shows()
+        void ShowApp()
         {
-            //Win.Show();
-            //Win.Activate();
             this.Show();
             this.Activate();
             timerHid.Start();
+            //Win.Show();
+            //Win.Activate();
+
         }
         //set time
         private void Timer_Tick(object sender, EventArgs e)

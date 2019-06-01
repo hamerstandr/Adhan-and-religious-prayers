@@ -70,6 +70,7 @@
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
+        <CheckBox x:Name="Startup" Content="startup" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="243,56,0,0" Checked="Startup_Checked" Unchecked="Startup_Unchecked"/>
 
     </Grid>
 </Controls:MetroWindow>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace اذان_و_اوقات_شرعی.Service
 {
-    class WinAPIWrapper
+    public class WinAPIWrapper
     {
         /// <summary>
         /// window的扩展样式  

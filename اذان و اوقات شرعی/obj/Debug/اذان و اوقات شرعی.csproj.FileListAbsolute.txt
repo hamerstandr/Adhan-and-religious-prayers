@@ -122,3 +122,44 @@ C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\
 C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\PacketDotNet.xml
 C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\SharpPcap.xml
 C:\Intel\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\SharpPcap.dll.config
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.exe.config
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.exe
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\اذان و اوقات شرعی.pdb
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\ControlzEx.dll
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.dll
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.dll
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Newtonsoft.Json.dll
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\PacketDotNet.dll
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Prayer_times_class.dll
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\SharpPcap.dll
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\System.Windows.Interactivity.dll
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\ControlzEx.pdb
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Hardcodet.Wpf.TaskbarNotification.xml
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.pdb
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\MahApps.Metro.xml
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\Newtonsoft.Json.xml
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\PacketDotNet.xml
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\SharpPcap.xml
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\bin\Debug\SharpPcap.dll.config
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csprojAssemblyReference.cache
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\ClockWindow.g.cs
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\FancyBalloon.g.cs
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\MainWindow.g.cs
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\Window1.g.cs
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\App.g.cs
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی_MarkupCompile.cache
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی_MarkupCompile.lref
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\App.baml
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\ClockWindow.baml
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\FancyBalloon.baml
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\MainWindow.baml
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\Window1.baml
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.g.resources
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان_و_اوقات_شرعی.Properties.Resources.resources
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.GenerateResource.cache
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.CoreCompileInputs.cache
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.csproj.CopyComplete
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.exe
+C:\Documents\GitHub\Adhan-and-religious-prayers\اذان و اوقات شرعی\obj\Debug\اذان و اوقات شرعی.pdb

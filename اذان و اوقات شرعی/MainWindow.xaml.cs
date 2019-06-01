@@ -47,6 +47,7 @@ namespace اذان_و_اوقات_شرعی
             Timer.Start();
             Clock.Show();
             EnableClock.IsChecked = Settings.Default.Clock;
+            Startup.IsChecked = Settings.Default.Startup;
         }
 
         readonly ClockWindow Clock = new ClockWindow();
@@ -125,6 +126,10 @@ namespace اذان_و_اوقات_شرعی
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (Startup.IsChecked.Value)
+                Medol.AutoStartupHelper.CreateAutorunShortcut();
+            else
+                Medol.AutoStartupHelper.RemoveAutorunShortcut();
             Settings.Default.Save();
         }
 
@@ -211,6 +216,16 @@ namespace اذان_و_اوقات_شرعی
                 Clock.Enable();
             else
                 Clock.Disable();
+        }
+
+        private void Startup_Checked(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.Startup = true;
+        }
+
+        private void Startup_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.Startup = false;
         }
     }
 }

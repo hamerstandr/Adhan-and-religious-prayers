@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
@@ -16,6 +18,9 @@ namespace اذان_و_اوقات_شرعی
     /// </summary>
     public partial class App : Application
     {
+        public static readonly string AppFullPath = Assembly.GetExecutingAssembly().Location;
+        public static readonly string AppPath = Path.GetDirectoryName(AppFullPath);
+        public static readonly bool IsWin10 = Environment.OSVersion.Version >= new Version(10, 0);
         public App()
         {
             this.Startup += App_Startup;
