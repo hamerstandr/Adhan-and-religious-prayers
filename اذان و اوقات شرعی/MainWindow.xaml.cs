@@ -46,7 +46,16 @@ namespace اذان_و_اوقات_شرعی
             Timer.Tick += Timer_Tick;
             Timer.Start();
             Clock.Show();
-            EnableClock.IsChecked = Settings.Default.Clock;
+            AutoHideClock.IsChecked = Settings.Default.AutoHideClock;
+            if (Settings.Default.AutoHideClock)
+                Clock.Enable();
+            else
+                Clock.Disable();
+            VisibleClock.IsChecked = Settings.Default.VisibleClock;
+            if (Settings.Default.VisibleClock)
+                Clock.Show();
+            else
+                Clock.Hide();
             Startup.IsChecked = Settings.Default.Startup;
         }
 
@@ -208,14 +217,21 @@ namespace اذان_و_اوقات_شرعی
             App.TryToCheckUpdate();
         }
 
-        private void EnableClock_Click(object sender, RoutedEventArgs e)
+        private void AutoHideClock_Click(object sender, RoutedEventArgs e)
         {
-            Settings.Default.Clock = !Settings.Default.Clock;
-            Settings.Default.Save();
-            if (Settings.Default.Clock)
+            Settings.Default.AutoHideClock = !Settings.Default.AutoHideClock;
+            AutoHideClock.IsChecked = Settings.Default.AutoHideClock;
+            if (Settings.Default.AutoHideClock)
+            {
                 Clock.Enable();
+                Clock.Show();
+                Settings.Default.VisibleClock = true;
+                VisibleClock.IsChecked = Settings.Default.VisibleClock;
+            }
+                
             else
                 Clock.Disable();
+            Settings.Default.Save();
         }
 
         private void Startup_Checked(object sender, RoutedEventArgs e)
@@ -226,6 +242,24 @@ namespace اذان_و_اوقات_شرعی
         private void Startup_Unchecked(object sender, RoutedEventArgs e)
         {
             Settings.Default.Startup = false;
+        }
+
+        private void VisibleClock_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.VisibleClock = !Settings.Default.VisibleClock;
+            VisibleClock.IsChecked = Settings.Default.VisibleClock;
+            if (Settings.Default.VisibleClock)
+                Clock.Show();
+            else
+            {
+                Clock.Hide();
+                //Disable Auto Hide Clock
+                Settings.Default.AutoHideClock = false;
+                AutoHideClock.IsChecked = Settings.Default.AutoHideClock;
+                Clock.Disable();
+            }
+            Settings.Default.Save();
+
         }
     }
 }

@@ -132,7 +132,7 @@ namespace اذان_و_اوقات_شرعی
         //readonly Window1 Win = new Window1();
         private void ClockWindow_ChangedPosition(object sender, EventArgs e)
         {
-            if (Settings.Default.Clock)
+            if (Settings.Default.AutoHideClock)
             {
                 var PSet = GetSetTasck(0, 150);
                 //Win.Left = PSet.X;

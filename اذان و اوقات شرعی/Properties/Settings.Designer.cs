@@ -86,12 +86,12 @@ namespace اذان_و_اوقات_شرعی.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool Clock {
+        public bool AutoHideClock {
             get {
-                return ((bool)(this["Clock"]));
+                return ((bool)(this["AutoHideClock"]));
             }
             set {
-                this["Clock"] = value;
+                this["AutoHideClock"] = value;
             }
         }
         
@@ -104,6 +104,18 @@ namespace اذان_و_اوقات_شرعی.Properties {
             }
             set {
                 this["Startup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool VisibleClock {
+            get {
+                return ((bool)(this["VisibleClock"]));
+            }
+            set {
+                this["VisibleClock"] = value;
             }
         }
     }

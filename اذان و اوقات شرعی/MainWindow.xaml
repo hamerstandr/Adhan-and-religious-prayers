@@ -63,7 +63,8 @@
                     <MenuItem Header="Auto Update" Click="Auto_Update_MenuItem_Click" />
                     <MenuItem Header="Update" Click="Update_MenuItem_Click" />
                     <MenuItem Header="Settinge" Click="Settinge_MenuItem_Click" />
-                    <MenuItem Name="EnableClock" Header="Enable Clock" Click="EnableClock_Click" />
+                    <MenuItem Name="AutoHideClock" Header="Auto Hide Clock" Click="AutoHideClock_Click" />
+                    <MenuItem Name="VisibleClock" Header="Visible Clock" Click="VisibleClock_Click" />
                     <MenuItem Header="Reset Lockation Clock" Click="ResetLockationClock_Click" />
                     <MenuItem Header="Stop" Click="Stop_Click" />
                     <MenuItem Header="Exit" Click="Exit_MenuItem_Click" />
