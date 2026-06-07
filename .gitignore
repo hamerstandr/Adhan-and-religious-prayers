@@ -1,55 +1,61 @@
-# Prerequisites
-*.d
+```
+# Compiled and build artifacts
+*.pyc
+__pycache__/
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Logs and temp files
+*.log
+*.tmp
+*.swp
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Environment
+.env
+.env.local
+*.env.*
 
-# Precompiled Headers
-*.gch
-*.pch
+# Editors
+.vscode/
+.idea/
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# System files
+.DS_Store
+Thumbs.db
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Coverage
+coverage/
+htmlcov/
+.coverage
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Dependency directories
+node_modules/
+venv/
+.venv/
+.mypy_cache/
+.pytest_cache/
+target/
+.gradle/
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-*.g.i.cs
-*.g.cs
-db.lock
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+```
