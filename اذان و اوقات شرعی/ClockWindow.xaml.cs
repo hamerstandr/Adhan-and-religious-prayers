@@ -1,5 +1,4 @@
-﻿using AppBarApplication;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -29,8 +28,6 @@ namespace اذان_و_اوقات_شرعی
     /// </summary>
     public partial class ClockWindow : Window
     {
-        readonly PersianCalendar PersianCalendar1 = new PersianCalendar();
-        readonly GregorianCalendar GregorianCalendar1 = new GregorianCalendar();
         readonly DispatcherTimer timer = new DispatcherTimer();
         readonly DispatcherTimer timerHid = new DispatcherTimer();
         public ClockWindow()
@@ -201,13 +198,19 @@ namespace اذان_و_اوقات_شرعی
         void SetDate()
         {
             DateTime now = DateTime.Now;
-            DateTime date = new DateTime(now.Year, now.Month, now.Day, new System.Globalization.GregorianCalendar());
-            DateTime dateP = new DateTime(now.Year, now.Month, now.Day, new System.Globalization.PersianCalendar());
-            string currentTime = date.ToShortTimeString();
-
-            string DoW = DateTime.Now.PersionDayOfWeek();
-            persianCalendar.Content = $"{PersianCalendar1.GetYear(DateTime.Now)}/{PersianCalendar1.GetMonth(DateTime.Now)}/{PersianCalendar1.GetDayOfMonth(DateTime.Now)}  {DateTime.Now.PersionDayOfWeek()}";
-            christianityCalendar.Content = $"{GregorianCalendar1.GetYear(DateTime.Now)}/{GregorianCalendar1.GetMonth(DateTime.Now)}/{GregorianCalendar1.GetDayOfMonth(DateTime.Now)}  {GregorianCalendar1.GetDayOfWeek(DateTime.Now)}";
+            
+            // به‌روزرسانی تمام تاریخ‌ها با فرمت زیبا
+            var persianCalendar = new System.Globalization.PersianCalendar();
+            var gregorianCalendar = new System.Globalization.GregorianCalendar();
+            
+            string persianDoW = now.PersionDayOfWeek();
+            string gregorianDoW = gregorianCalendar.GetDayOfWeek(now).ToString();
+            
+            // تاریخ شمسی کامل
+            persianCalendar.Content = $"{persianCalendar.GetYear(now)}/{persianCalendar.GetMonth(now):00}/{persianCalendar.GetDayOfMonth(now):00} - {persianDoW}";
+            
+            // تاریخ میلادی کامل
+            christianityCalendar.Content = $"{gregorianCalendar.GetYear(now)}/{gregorianCalendar.GetMonth(now):00}/{gregorianCalendar.GetDayOfMonth(now):00} - {gregorianDoW}";
         }
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {

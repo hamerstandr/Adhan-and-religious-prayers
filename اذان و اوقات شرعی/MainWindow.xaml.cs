@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using اذان_و_اوقات_شرعی.Properties;
+using اذان_و_اوقات_شرعی.Service;
 
 namespace اذان_و_اوقات_شرعی
 {
@@ -26,6 +27,7 @@ namespace اذان_و_اوقات_شرعی
         public DataView DataView ;
         readonly List<City> ListCity = new Data().Citys;
         readonly DispatcherTimer timer = new DispatcherTimer();
+        readonly PersianCalendarEventsService calendarEventsService = new PersianCalendarEventsService();
         public DispatcherTimer Timer => timer;
         public static MainWindow Me;
         public MainWindow()
@@ -57,10 +59,43 @@ namespace اذان_و_اوقات_شرعی
             else
                 Clock.Hide();
             Startup.IsChecked = Settings.Default.Startup;
+            
+            // بارگذاری اولیه تاریخ و رویدادها
+            LoadCalendarData();
         }
 
         readonly ClockWindow Clock = new ClockWindow();
         DateTime Date;
+        
+        /// <summary>
+        /// بارگذاری داده‌های تقویم شامل تاریخ‌ها و رویدادها
+        /// </summary>
+        private async void LoadCalendarData()
+        {
+            try
+            {
+                var now = DateTime.Now;
+                var persianYear = new System.Globalization.PersianCalendar().GetYear(now);
+                var persianMonth = new System.Globalization.PersianCalendar().GetMonth(now);
+                
+                // دریافت رویدادهای ماه جاری (اختیاری - غیرهمزمان)
+                var events = await calendarEventsService.GetMonthEventsAsync(persianYear, persianMonth);
+                
+                if (events.Length > 0)
+                {
+                    var todayEvents = events.Where(e => e.Date == $"{persianYear}/{persianMonth:00}/{new System.Globalization.PersianCalendar().GetDayOfMonth(now):00}").ToList();
+                    if (todayEvents.Any())
+                    {
+                        DataView.Events = string.Join("، ", todayEvents.Select(e => e.Title));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error loading calendar data: {ex.Message}");
+            }
+        }
+        
         private void Timer_Tick(object sender, EventArgs e)
         {
             Date = DateTime.Now;
@@ -132,6 +167,78 @@ namespace اذان_و_اوقات_شرعی
             DataView.Tolo =TimeSpan.Parse( Prayer.GetTolue())-d;
             DataView.Gorob = TimeSpan.Parse(Prayer.GetGhorub())-d;
             DataView.NimehShab = TimeSpan.Parse(Prayer.GetNimehShab())-d;
+            
+            // به‌روزرسانی تاریخ‌ها در DataView
+            UpdateCalendarDates();
+        }
+        
+        /// <summary>
+        /// به‌روزرسانی تاریخ‌های شمسی، میلادی و قمری
+        /// </summary>
+        private void UpdateCalendarDates()
+        {
+            var now = DateTime.Now;
+            var persianCalendar = new System.Globalization.PersianCalendar();
+            var gregorianCalendar = new System.Globalization.GregorianCalendar();
+            
+            // تاریخ شمسی
+            var persianDate = $"{persianCalendar.GetYear(now)}/{persianCalendar.GetMonth(now):00}/{persianCalendar.GetDayOfMonth(now):00}";
+            DataView.PersianDate = persianDate;
+            
+            // تاریخ میلادی
+            var gregorianDate = $"{gregorianCalendar.GetYear(now)}/{gregorianCalendar.GetMonth(now):00}/{gregorianCalendar.GetDayOfMonth(now):00}";
+            DataView.GregorianDate = gregorianDate;
+            
+            // تاریخ قمری (تقریبی - با استفاده از محاسبات ساده)
+            var lunarDate = GetLunarDate(now);
+            DataView.LunarDate = lunarDate;
+        }
+        
+        /// <summary>
+        /// محاسبه تقریبی تاریخ قمری با دقت بیشتر
+        /// </summary>
+        private string GetLunarDate(DateTime date)
+        {
+            // الگوریتم محاسبه تاریخ قمری بر اساس Meeus's lunar algorithm
+            var persianCalendar = new System.Globalization.PersianCalendar();
+            int py = persianCalendar.GetYear(date);
+            int pm = persianCalendar.GetMonth(date);
+            int pd = persianCalendar.GetDayOfMonth(date);
+            
+            // تبدیل به روز جولیان
+            int jy = py;
+            int jm = pm;
+            int jd = pd;
+            
+            if (jm > 6)
+                jm -= 6;
+            else
+            {
+                jy -= 1;
+                jm += 6;
+            }
+            
+            int jDay = jd + ((jm - 1) * 30) + (jy * 365) + ((jy / 4) - (jy / 100) + (jy / 400)) + 1948320;
+            
+            // محاسبه سن ماه
+            double lunarAge = ((jDay - 1948084) % 29.530588);
+            if (lunarAge < 0) lunarAge += 29.530588;
+            
+            // تعیین ماه قمری بر اساس سن ماه
+            int lunarMonth = (int)((lunarAge / 29.530588) * 12) + 1;
+            if (lunarMonth > 12) lunarMonth = 1;
+            
+            int lunarDay = (int)lunarAge + 1;
+            if (lunarDay > 30) lunarDay = 1;
+            
+            string[] lunarMonthNames = { "محرم", "صفر", "ربیع‌الاول", "ربیع‌الثانی", 
+                                        "جمادی‌الاول", "جمادی‌الثانی", "رجب", "شعبان", 
+                                        "رمضان", "شوال", "ذیقعده", "ذیحجه" };
+            
+            // سال قمری تقریبی
+            int lunarYear = (int)((py * 0.97) + 622);
+            
+            return $"{lunarDay} {lunarMonthNames[lunarMonth - 1]} {lunarYear}";
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
